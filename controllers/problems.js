@@ -100,13 +100,9 @@ export const runProblem = async (req, res) => {
 
       const submissionData = await submissionResponse.json();
 
-      console.log("Submission data", submissionData);
-
       const token = submissionData.token;
 
       const resultUrl = `https://judge0-ce.p.rapidapi.com/submissions/${token}?base64_encoded=true`;
-
-      console.log("token", token);
 
       const resultResponse = await fetch(resultUrl, {
         method: "GET",
@@ -119,21 +115,18 @@ export const runProblem = async (req, res) => {
 
       const resultData = await resultResponse.json();
 
-      console.log("Result data", resultData);
-
       const outputData = atob(resultData.stdout).trim();
 
-      console.log("Output data", outputData);
+      // Remove \n and spaces from the output
+      const expectedOutput = output.replace(/\s/g, "");
+      const userOutput = outputData.replace(/\s/g, "");
 
-      if (outputData === output) {
-        results.push({ output, result: "Accepted" });
+      if (expectedOutput === userOutput) {
+        results.push({ output: outputData, result: "Accepted" });
       } else {
-        results.push({ output, result: "Wrong Answer" });
+        results.push({ output: outputData, result: "Wrong Answer" });
       }
-
-      console.log(results);
     }
-
     res.status(200).json(results);
   } catch (error) {
     res.status(500).json({ message: error.message });
