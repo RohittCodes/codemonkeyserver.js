@@ -9,7 +9,6 @@ import {
 } from "../controllers/problems.js";
 
 const router = express.Router();
-router.use(cors());
 router.use(express.json());
 
 router.get("/", (req, res) => {
