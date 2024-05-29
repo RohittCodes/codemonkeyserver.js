@@ -7,9 +7,16 @@ import {
   runProblem,
   updateProblem,
 } from "../controllers/problems.js";
+import cors from "cors";
 
 const router = express.Router();
 
+app.use(
+  cors({
+    origin: "https://codemonkey-js.vercel.app", // Allow only this origin
+    methods: ["GET", "POST", "PUT"], // Specify which methods are allowed
+  })
+);
 router.use(express.json());
 
 router.get("/", (req, res) => {
