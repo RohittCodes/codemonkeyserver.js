@@ -1,7 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import cors from "cors";
 import { codeToolsRoute } from "./routes/codeTools.js";
 import { codeChimpRoute } from "./routes/codeChimp.js";
 import { problemRoute } from "./routes/problemRoute.js";
@@ -12,7 +11,6 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGODB_URI;
 
 const app = express();
-app.use(cors());
 
 mongoose.connect(MONGO_URI);
 
