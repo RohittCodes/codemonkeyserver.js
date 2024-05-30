@@ -1,7 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import cors from "cors";
 import { codeToolsRoute } from "./routes/codeTools.js";
 import { codeChimpRoute } from "./routes/codeChimp.js";
 import { problemRoute } from "./routes/problemRoute.js";
@@ -14,11 +13,6 @@ const MONGO_URI = process.env.MONGODB_URI;
 const app = express();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://codemonkey-js.vercel.app",
-  })
-);
 
 mongoose.connect(MONGO_URI);
 
