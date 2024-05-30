@@ -12,6 +12,8 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGODB_URI;
 
 const app = express();
+
+app.use(express.json());
 app.use(cors());
 
 mongoose.connect(MONGO_URI);
