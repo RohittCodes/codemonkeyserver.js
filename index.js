@@ -14,7 +14,11 @@ const MONGO_URI = process.env.MONGODB_URI;
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://codemonkey-js.vercel.app",
+  })
+);
 
 mongoose.connect(MONGO_URI);
 
