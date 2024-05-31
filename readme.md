@@ -35,6 +35,8 @@ CodeMonkey Backend is a REST API server for CodeMonkey, a platform to learn and 
     JUDGE0_API_KEY={Your Judge0 API Key. Get it from RapidAPI}
     RAPID_API_HOST={Your RapidAPI Host. Get it from RapidAPI}
     ```
+
+   **Note**: Don't forget to update the headers in the cors config object (path: ./index.js). Will be updating it soon!
     
 5. Start the server
    ```sh
