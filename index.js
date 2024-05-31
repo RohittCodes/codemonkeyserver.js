@@ -9,7 +9,7 @@ import { problemRoute } from "./routes/problemRoute.js";
 dotenv.config();
 
 const corsOptions = {
-  origin: "https://codemonkey-js.vercel.app", // Change this to the client URL
+  origin: process.env.CLIENT_URL,
   credentials: true,
   optionsSuccessStatus: 200,
 };
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://codemonkey-js.vercel.app"); // Change this to the client URL
+  res.header("Access-Control-Allow-Origin", process.env.CLIENT_URL);
   res.header("Access-Control-Allow-Headers", true);
   res.header("Access-Control-Allow-Credentials", true);
   res.header(

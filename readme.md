@@ -34,9 +34,8 @@ CodeMonkey Backend is a REST API server for CodeMonkey, a platform to learn and 
     GEMINI_API_KEY={Your Gemini API Key. Get it from Google AI studio}
     JUDGE0_API_KEY={Your Judge0 API Key. Get it from RapidAPI}
     RAPID_API_HOST={Your RapidAPI Host. Get it from RapidAPI}
+    CLIENT_URL={Your frontend URL}
     ```
-
-   **Note**: Don't forget to update the headers in the cors config object (path: ./index.js). Will be updating it soon!
     
 5. Start the server
    ```sh
