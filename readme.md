@@ -35,6 +35,7 @@ CodeMonkey Backend is a REST API server for CodeMonkey, a platform to learn and 
     JUDGE0_API_KEY={Your Judge0 API Key. Get it from RapidAPI}
     RAPID_API_HOST={Your RapidAPI Host. Get it from RapidAPI}
     CLIENT_URL={Your frontend URL}
+    PORT=5000
     ```
     
 5. Start the server
