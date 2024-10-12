@@ -107,9 +107,8 @@ export const runProblem = async (req, res) => {
       const resultResponse = await fetch(resultUrl, {
         method: "GET",
         headers: {
-          "X-RapidAPI-Key":
-            "28d0a14844mshc0200a68982ea43p1ce9a8jsnbf2505ec0926",
-          "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+          "X-RapidAPI-Key": JUDGE0_API_KEY,
+          "X-RapidAPI-Host": RAPID_API_HOST
         },
       });
 
